@@ -78,7 +78,9 @@ namespace SilentOak.QualityProducts.Processors
                         mead.Price = 2 * input.Price;
                     }
 
-                    mead.honeyType.Value = maybeHoneyType.Value;
+                    if (maybeHoneyType.HasValue) {
+                        mead.honeyType.Value = maybeHoneyType.Value;
+                    }
                     return mead;
                 },
                 workingEffects: (location, tile) =>
